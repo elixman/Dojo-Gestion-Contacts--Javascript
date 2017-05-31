@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded',function() {
     document.getElementById('select').onchange=execute_by_choice;//quant  c'est modifié on execute la fonction "execute
 },false);
 
+
+//c'est ici qu'on dispatche l'instruction par rapport a ce qui a été séléctionné comme coption
 function execute_by_choice(event) {
     //si le select option a pour value list, on lance la fonction createlist
     if(event.target.value === "list"){
@@ -19,7 +21,8 @@ function execute_by_choice(event) {
     if(event.target.value === "count"){
      createcounter();
     }
-};
+}
+
 //fonction lancée quant add est selectionné
 function createform(){
     //on commence par remplir la div content avec un formulaire généré par js
@@ -52,7 +55,8 @@ function createform(){
               '<p>votre contact a bien été ajouté</p>'+
               '<button onclick="createform();">ajouter un nouveau contact</button>'
     });
-};
+}
+
 //fonction lancée quant le select est sur list
 function createlist(){
     //on crée une variable avec le texte a inserer
@@ -66,6 +70,7 @@ function createlist(){
     //enfin, on insere ce texte dans la div content (innerHTML écrase ce qu'il y avait auparavant
     document.getElementById('content').innerHTML = text_to_add;
 }
+
 //fonction qui est lancée quant le select est sur count
 function createcounter(){
     //on crée la variable counter avec a l'interieur un texte mettant en forme le comptage
