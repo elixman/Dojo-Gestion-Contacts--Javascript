@@ -1,0 +1,29 @@
+*{
+  font-family: "avenir";
+}
+body{
+  text-align: center;
+  color: #b2242f;
+}
+.main{
+  width: 25%;
+  margin: auto;
+  height: 700px;
+}
+img{
+  margin-bottom: 30px;
+}
+#select{
+  margin-bottom: 50px;
+  background-color: #b2242f;
+  color: #f5f4f4;
+  font-size: 25px;
+}
+#content{
+  background-color: #eeeded;
+}
+#default{
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-size: 20px;
+}
