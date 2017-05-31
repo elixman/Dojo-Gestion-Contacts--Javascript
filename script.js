@@ -3,10 +3,10 @@ var address_book = [];
 // equivalent du document.ready = on attends que tout soit chargé...
 document.addEventListener('DOMContentLoaded',function() {
     //tout les evenements ont pour origine une modification du select
-    document.getElementById('select').onchange=execute();//quant  c'est modifié on execute la fonction "execute
+    document.getElementById('select').onchange=execute_by_choice;//quant  c'est modifié on execute la fonction "execute
 },false);
 
-function execute(event) {
+function execute_by_choice(event) {
     //si le select option a pour value list, on lance la fonction createlist
     if(event.target.value === "list"){
       createlist();
@@ -19,7 +19,7 @@ function execute(event) {
     if(event.target.value === "count"){
      createcounter();
     }
-}
+};
 //fonction lancée quant add est selectionné
 function createform(){
     //on commence par remplir la div content avec un formulaire généré par js
@@ -46,8 +46,13 @@ function createform(){
                           };
           //on ajoute ce contact a la suite du tableau de notre carnet d'adresse
           address_book.push(newcontact);
+          //a la fin de la série d'instruction pour enregistrer le formulaire dans le tableau,
+          //on affiche un message flash et un bouton permettant de refaire l'opération
+          document.getElementById('content').innerHTML =
+              '<p>votre contact a bien été ajouté</p>'+
+              '<button onclick="createform();">ajouter un nouveau contact</button>'
     });
-}
+};
 //fonction lancée quant le select est sur list
 function createlist(){
     //on crée une variable avec le texte a inserer
